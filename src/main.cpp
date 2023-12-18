@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
   } else {
     cout << num << " arguments provided\n";
   }
-  read(fd, buffer, 512 + num);
+  read(fd, buffer, 512 + argc);
   if (argv != 0) {
     cout << "argv not null\n";; // intentional extra-semicolon
   }
