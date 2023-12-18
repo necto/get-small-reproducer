@@ -2,6 +2,9 @@
 
 using namespace std;
 
+int const fd = genInt();
+unsigned char buffer[512];
+
 int main(int argc, char* argv[]) {
   int num = argc - 1;
 
