@@ -2,6 +2,11 @@
 
 using namespace std;
 
+ssize_t read(int fildes, void* buf, size_t nbyte);
+int genInt();
+int const fd = genInt();
+unsigned char buffer[512];
+
 int main(int argc, char* argv[]) {
   int num = argc - 1;
 
@@ -14,6 +19,7 @@ int main(int argc, char* argv[]) {
   } else {
     cout << num << " arguments provided\n";
   }
+  read(fd, buffer, 512 + num);
   if (argv != 0) {
     cout << "argv not null\n";; // intentional extra-semicolon
   }
