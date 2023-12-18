@@ -28,3 +28,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Put the name of your token here
         run: |
           sonar-scanner --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}"
+      - name: Upload reproducer artifact
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: reproducer
+          path: sonar-cfamily-reproducer.zip
